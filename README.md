@@ -9,3 +9,9 @@ This is a practice of [Data Access & EF-Core](https://www.youtube.com/playlist?l
 ### ADO.NET Architecture
 
 ![ADO.NET Architecture](/ADO.NET%20Architecture.PNG)
+
+### EntityFramework Core
+
+#### EntityFramework Core Overview
+
+![EntityFramework Core Overview](/EFCore%20Overview.PNG)

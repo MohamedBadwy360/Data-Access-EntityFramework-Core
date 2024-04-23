@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ReverseEngineering_PMC", "01.ReverseEngineering_PMC\01.ReverseEngineering_PMC.csproj", "{2E919396-3D5E-49D4-9807-FFB5CDA5C9A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.ReverseEngineeringNETCLI", "02.ReverseEngineeringNETCLI\02.ReverseEngineeringNETCLI.csproj", "{FCFFFF51-D9E0-41A3-AFC6-23AEEB1038E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E919396-3D5E-49D4-9807-FFB5CDA5C9A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E919396-3D5E-49D4-9807-FFB5CDA5C9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E919396-3D5E-49D4-9807-FFB5CDA5C9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E919396-3D5E-49D4-9807-FFB5CDA5C9A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFFFF51-D9E0-41A3-AFC6-23AEEB1038E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFFFF51-D9E0-41A3-AFC6-23AEEB1038E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFFFF51-D9E0-41A3-AFC6-23AEEB1038E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFFFF51-D9E0-41A3-AFC6-23AEEB1038E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AA59444-81E0-4C54-B001-875A701CDFE4}
+	EndGlobalSection
+EndGlobal

@@ -1,10 +1,18 @@
-﻿namespace _01.InitialMigration
+﻿using Data;
+
+namespace _01.InitialMigration
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            using (var context = new AppDbContext())
+            {
+                foreach (var course in context.Courses)
+                {
+                    Console.WriteLine($"[{course.Id}] {course.CourseName}");
+                }
+            }
         }
     }
 }

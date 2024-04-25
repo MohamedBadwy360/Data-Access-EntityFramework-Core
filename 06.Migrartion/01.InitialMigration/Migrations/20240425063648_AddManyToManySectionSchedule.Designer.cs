@@ -4,6 +4,7 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace _01.InitialMigration.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240425063648_AddManyToManySectionSchedule")]
+    partial class AddManyToManySectionSchedule
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,73 +73,6 @@ namespace _01.InitialMigration.Migrations
                             Id = 5,
                             CourseName = "Computer Science",
                             Price = 3000m
-                        });
-                });
-
-            modelBuilder.Entity("Entities.Enrollment", b =>
-                {
-                    b.Property<int>("SectionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("SectionId", "StudentId");
-
-                    b.HasIndex("StudentId");
-
-                    b.ToTable("Enrollments", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            SectionId = 6,
-                            StudentId = 1
-                        },
-                        new
-                        {
-                            SectionId = 6,
-                            StudentId = 2
-                        },
-                        new
-                        {
-                            SectionId = 7,
-                            StudentId = 3
-                        },
-                        new
-                        {
-                            SectionId = 7,
-                            StudentId = 4
-                        },
-                        new
-                        {
-                            SectionId = 8,
-                            StudentId = 5
-                        },
-                        new
-                        {
-                            SectionId = 8,
-                            StudentId = 6
-                        },
-                        new
-                        {
-                            SectionId = 9,
-                            StudentId = 7
-                        },
-                        new
-                        {
-                            SectionId = 9,
-                            StudentId = 8
-                        },
-                        new
-                        {
-                            SectionId = 10,
-                            StudentId = 9
-                        },
-                        new
-                        {
-                            SectionId = 10,
-                            StudentId = 10
                         });
                 });
 
@@ -567,107 +503,6 @@ namespace _01.InitialMigration.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Entities.Student", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("VARCHAR");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("VARCHAR");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Students", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            FirstName = "Fatima",
-                            LastName = "Ali"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            FirstName = "Noor",
-                            LastName = "Saleh"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            FirstName = "Omar",
-                            LastName = "Youssef"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            FirstName = "Huda",
-                            LastName = "Ahmed"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            FirstName = "Amira",
-                            LastName = "Tariq"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            FirstName = "Zainab",
-                            LastName = "Ismail"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            FirstName = "Yousef",
-                            LastName = "Farid"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            FirstName = "Layla",
-                            LastName = "Mustafa"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            FirstName = "Mohammed",
-                            LastName = "Adel"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            FirstName = "Samira",
-                            LastName = "Nabil"
-                        });
-                });
-
-            modelBuilder.Entity("Entities.Enrollment", b =>
-                {
-                    b.HasOne("Entities.Section", "Section")
-                        .WithMany("Enrollments")
-                        .HasForeignKey("SectionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Entities.Student", "Student")
-                        .WithMany("Enrollments")
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Section");
-
-                    b.Navigation("Student");
-                });
-
             modelBuilder.Entity("Entities.Instructor", b =>
                 {
                     b.HasOne("Entities.Office", "Office")
@@ -731,14 +566,7 @@ namespace _01.InitialMigration.Migrations
 
             modelBuilder.Entity("Entities.Section", b =>
                 {
-                    b.Navigation("Enrollments");
-
                     b.Navigation("SectionSchedules");
-                });
-
-            modelBuilder.Entity("Entities.Student", b =>
-                {
-                    b.Navigation("Enrollments");
                 });
 #pragma warning restore 612, 618
         }

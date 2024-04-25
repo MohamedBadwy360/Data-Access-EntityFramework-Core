@@ -22,6 +22,12 @@ namespace Data.Config
                 .HasMaxLength(255)
                 .IsRequired();
 
+
+            builder.HasOne(i => i.Office)
+                .WithOne(o => o.Instructor)
+                .HasForeignKey<Instructor>(i => i.OfficeId)
+                .IsRequired(false);
+
             builder.ToTable("Instructors");
 
             builder.HasData(LoadCourses());
@@ -38,11 +44,11 @@ namespace Data.Config
 
             return new List<Instructor>
             {
-                new Instructor { Id = 1, Name = "Ahmed Abdullah" },
-                new Instructor { Id = 2, Name = "Yasmeen Mohammed" },
-                new Instructor { Id = 3, Name = "Khalid Hassan" },
-                new Instructor { Id = 4, Name = "Nadia Ali" },
-                new Instructor { Id = 5, Name = "Omar Ibrahim" }
+                new Instructor { Id = 1, Name = "Ahmed Abdullah", OfficeId = 1 },
+                new Instructor { Id = 2, Name = "Yasmeen Mohammed", OfficeId = 2 },
+                new Instructor { Id = 3, Name = "Khalid Hassan", OfficeId = 3 },
+                new Instructor { Id = 4, Name = "Nadia Ali", OfficeId = 4 },
+                new Instructor { Id = 5, Name = "Omar Ibrahim", OfficeId = 5 }
             };
         }
     }

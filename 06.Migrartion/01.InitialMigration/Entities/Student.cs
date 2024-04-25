@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Course
+    public class Student
     {
         public int Id { get; set; }
-        public string? CourseName { get; set; }
-        public decimal Price { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
         public ICollection<Section> Sections { get; set; } = new List<Section>();
+        public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
     }
 }

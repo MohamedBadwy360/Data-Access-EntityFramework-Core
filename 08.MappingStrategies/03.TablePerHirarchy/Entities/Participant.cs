@@ -14,28 +14,4 @@ namespace Entities
         public ICollection<Section> Sections { get; set; } = new List<Section>();
         //public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
     }
-
-    public class Individual : Participant
-    {
-        public string? University { get; set; }
-        public int YearOfGraduation { get; set; }
-        public bool IsIntern { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Id}  | {FirstName}, {LastName} | Graduted on ({YearOfGraduation}) From {University}" +
-                $"({(IsIntern ? "Internship" : "")})";
-        }
-    }
-
-    public class Coporate : Participant
-    {
-        public string? Company { get; set; }
-        public string? JobTitle { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Id}  | {FirstName}, {LastName} | ({JobTitle}) at {Company}";
-        }
-    }
 }
